@@ -8,6 +8,7 @@ import {
 import Home from './Home'
 import Login from './Login'
 import Users from './Users'
+import Slider from './Slider'
 import NotMatch from './404'
 
 function App() {
@@ -15,12 +16,9 @@ function App() {
 		<Router>
 			<Switch>
 				<Route exact path="/" component={Login} />
-				<Route path="/home" render={() => (
-					<Home>
-						<Route path="/home/users" component={Users} />
-					</Home>
-				)} />
-				<Route path="*" component={NotMatch}/>
+				<Route exact path="/panel" component={Home} />
+				<Route exact path="/panel/slider" component={Slider} />
+				<Route path="*" component={NotMatch} />
 			</Switch>
 		</Router>
 	)
